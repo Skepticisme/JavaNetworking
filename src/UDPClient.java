@@ -17,7 +17,7 @@ public class UDPClient {
           DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
           clientSocket.receive(receivePacket); // Block and wait for server messages
           String serverMessage = new String(receivePacket.getData(), 0, receivePacket.getLength()).trim();
-          System.out.println("\n[Server]: " + serverMessage);
+          System.out.println("\n"+ serverMessage);
         }
       } catch (IOException e) {
         System.err.println("Error receiving message: " + e.getMessage());
