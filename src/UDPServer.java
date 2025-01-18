@@ -8,18 +8,15 @@ public class UDPServer {
     private static Map<String, ClientInfo> clients = new HashMap<>();
     private static final String MULTICAST_ADDRESS = "230.0.0.1";
     private static final int MULTICAST_PORT = 5002;
-    private static final String WELCOME_MESSAGE = """
-        Welcome to the Chat Server!
-        
-        Available Commands:
-        /help           - Show this help message
-        /users          - Show list of connected users
-        /msg [user] [message] - Send a private message to a specific user
-        /quit           - Leave the chat server
-        
-        Regular messages will be sent to all connected users.
-        Enjoy your chat!
-        """;
+    private static final String WELCOME_MESSAGE = 
+        "Welcome to the Chat Server!\n\n" +
+        "Available Commands:\n" +
+        "/help           - Show this help message\n" +
+        "/users          - Show list of connected users\n" +
+        "/msg [user] [message] - Send a private message to a specific user\n" +
+        "/quit           - Leave the chat server\n\n" +
+        "Regular messages will be sent to all connected users.\n" +
+        "Enjoy your chat!";
 
     public static void main(String[] args) {
         try (DatagramSocket serverSocket = new DatagramSocket(5001);
